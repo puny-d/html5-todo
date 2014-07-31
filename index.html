@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A html5 to do</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="sidebar-left">
+            <span data-icon="&#xe031;" class="top-button"></span>
+            <div data-icon="&#xe057;" class="user-avatar">
+            </div><!-- end user-avatar -->
+            <div class="elegant-calencar">
+               <p id="reset">reset</p>
+                <div id="header" class="clearfix">
+                   <div data-icon="&#xe087;" class="pre-button"></div>
+                    <div class="head-info">
+                        <div class="head-day"></div>
+                        <div class="head-month"></div>
+                    </div>
+                    <div data-icon="&#xe08c;" class="next-button"></div>
+                </div><!-- end header -->
+                <table id="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table><!-- end calendar -->
+            </div><!-- end elegant-calendar -->
+        </div><!-- end sidebar-left -->
+        <div class="main-section">
+            <div class="section-wrap">
+                <input type="text" placeholder="Add some events..." id="edit-input">
+                <span data-icon="&#xe002;" class="add-tag main-icon"></span>
+                <div class="todo-calculates">
+                    <span data-icon="&#xe06f;" class="main-icon"><span class="num"></span>items left!</span>
+                </div>
+                <div class="main-lists">
+                </div>
+            </div>
+        </div><!-- end main-section -->
+    </div>
+<script src="js/main.js"></script>
+<script src="js/calendar.js"></script>
+</body>
+</html>
