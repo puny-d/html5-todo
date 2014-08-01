@@ -1,6 +1,6 @@
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Lantinghei SC","Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,Arial,sans-serif;
      -webkit-user-select: none;
      -moz-user-select: none;
      -ms-user-select: none;
@@ -48,6 +48,7 @@ body{
     color: #fff;
     text-align: center;
     height: 100%;
+    z-index: 1;
 }
 
 .main-section {
@@ -230,8 +231,8 @@ tbody td:hover, .selected {
 }
 
 #edit-input {
+    width: 500px;
     border: none;
-    width: 30em;
     padding: 1em;
     font-size: 1.2em;
     background-color: #efefef;
@@ -243,13 +244,13 @@ tbody td:hover, .selected {
 }
 
 .main-lists {
+    width: 500px;
     margin-top: 3em;
-    font-size: 1.4em;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .main-icon, .delete-icon::after {
-    font-size: 2em;
+    font-size: 30px;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -258,12 +259,11 @@ tbody td:hover, .selected {
     transition: all 0.2s ease-in;
 }
 
-.main-icon:hover, .delete-icon:hover::after {
+#top-right-menu span:hover, .main-icon:hover, .delete-icon:hover::after {
     color: #e66b6b;
 }
 
 .todo-list {
-    font-family: serif;
     text-decoration: none;
     color: #42516d;
     border-color: #42516d;
@@ -271,7 +271,6 @@ tbody td:hover, .selected {
 }
 
 .todo-list-checked {
-    font-family: sans-serif;
     color: #e66b6b;
     border-color: #e66b6b;
     text-decoration: line-through;
@@ -280,10 +279,10 @@ tbody td:hover, .selected {
 .todo-list, .todo-list-checked {
     border: 1px solid;
     border-left: 6px solid;
-    padding: 0.1em 1em;
-    margin-bottom: 1em;
+    padding: 0.3em 1em;
+    margin-bottom: 1.3em;
     font-weight: 100;
-    width: 28em;
+    font-size: 16px;
     cursor: pointer;
     -webkit-transition: -webkit-transform 0.2s ease-in;
     transition: transform 0.2s ease-in;
@@ -313,12 +312,12 @@ tbody td:hover, .selected {
 .delete-icon::after {
     font-family: "outlined-iconset" !important;
     content: "\e072";
-    margin-left: -2em;
+    margin-left: -3em;
     margin-right: 0;
-    font-size: 1.2em
+    font-size: 26px;
 }
 
-.delete-icon:active::after {
+.delete-icon:active::after, #top-right-menu span:active{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -329,13 +328,43 @@ tbody td:hover, .selected {
     margin-top: 2em;
     word-spacing: 0.2em;
     line-height: 1.2;
+    font-size: 1.5em;
     color: #898989;
 }
 
-.num {
+#num {
     margin-left: 1em;
     margin-right: 1em;
-    color: #42516d;
+    color: #45d3d3;
+    font-family: sans-serif;
 }
 
 
+/*top-right-menu*/
+
+#top-right-menu {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-bottom-left-radius: 100%;
+    top: 0;
+    right: 0;
+    background-color: #42516d;
+    z-index: 1;
+}
+
+#top-right-menu span {
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    margin-left: 0em;
+    padding-top: 0.2em;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+#top-right-menu .delete-all {
+    margin-left: 1.2em;
+}

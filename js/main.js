@@ -7,6 +7,7 @@
     }
 
     Todo.prototype.form = function() {
+        var that = this;
         window.addEventListener("keypress", function (event){
             var key = event.keyCode || event.which;
             if(key === 13){
@@ -20,6 +21,7 @@
                     mainList.appendChild(todoListWarp);
                     todoListWarp.appendChild(deleteIcon);
                     todoListWarp.appendChild(todoList);
+                    that.calculates(1);
                     //empty input
                     document.getElementById("edit-input").value = "";
                 }
@@ -28,21 +30,58 @@
     };
 
     Todo.prototype.toggleClass = function() {
-        mainList.addEventListener('click', function(e){
+        var that = this;
+        document.addEventListener('click', function(e){
             if(e.target){
                 switch(e.target.className){
                     case "todo-list":
                         e.target.className = "todo-list-checked";
+                        that.calculates(-1);
                         break;
                     case "todo-list-checked":
                          e.target.className = "todo-list";
+                        that.calculates(1);
                         break;
                     case "delete-icon":
+                        if(e.target.nextSibling.className == "todo-list") {
+                            that.calculates(-1);
+                        }
                         mainList.removeChild(e.target.parentNode);
+                        break;
+                    case "check-all":
+                        var todoList = document.getElementsByClassName("todo-list"),
+                            todoLen = todoList.length;
+                        that.calculates(-todoLen);
+                        while(todoLen--){
+                            todoList[todoLen].className = "todo-list-checked";
+                        }
+                        break;
+                    case "delete-all":
+                        var todoListChecked = document.getElementsByClassName("todo-list-checked"),
+                            todoCheckedLen = todoListChecked.length;
+                        while(todoCheckedLen--){
+                            mainList.removeChild(todoListChecked[todoCheckedLen].parentNode);
+                        }
+                        break;
                 }
             }
         });
     };
+
+    Todo.prototype.calculates = function(e) {
+        var numSpan = document.getElementById('num'),
+            num = document.getElementById('num').innerHTML,
+            num = parseInt(num);
+            updateDom = function() {
+                if(num >= 0) {
+                    num += e;
+                    numSpan.innerHTML = num;
+                }else{
+                    num = 0;
+                }
+        };
+        updateDom();
+    }
 
 
     function creatElement(tagName, className, innerTxt) {
